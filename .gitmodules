@@ -1,0 +1,3 @@
+[submodule "src/recipes"]
+	path = src/recipes
+	url = git@github.com:toqvist/recipes.git
