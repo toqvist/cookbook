@@ -1,13 +1,13 @@
 backend:
   name: git-gateway
   branch: main
-media_folder: "src/recipes/img"
+media_folder: "cookbook/src/recipes/img"
 public_folder: "/recipes/img"
 
 collections:
   - name: "recipes"
     label: "Recipes"
-    folder: "src/recipes"
+    folder: "cookbook/src/recipes"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -54,7 +54,7 @@ collections:
       - name: "site"
         label: "Site settings"
         delete: false
-        file: "src/_data/site.json"
+        file: "cookbook/src/_data/site.json"
         fields:
           - {
               label: "Site name",
@@ -100,7 +100,7 @@ collections:
       - name: "nav"
         label: "Navigation"
         delete: false
-        file: "src/_data/nav.json"
+        file: "cookbook/src/_data/nav.json"
         fields:
           - label: "Items"
             name: "items"
@@ -112,7 +112,7 @@ collections:
     files:
       - name: "home"
         label: "Homepage"
-        file: "src/index.md"
+        file: "cookbook/src/index.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - {
@@ -144,12 +144,12 @@ collections:
             }
       - name: "recipes"
         label: "All recipes page"
-        file: "src/recipes.md"
+        file: "cookbook/src/recipes.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
       - name: "tags"
         label: "Tags pages"
-        file: "src/tag.md"
+        file: "cookbook/src/tag.md"
         fields:
           - {
               label: "All recipes (label)",
@@ -158,7 +158,7 @@ collections:
             }
       - name: "about"
         label: "About page"
-        file: "src/about.md"
+        file: "cookbook/src/about.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
