@@ -6,11 +6,12 @@ from git import Repo
 import subprocess
 
 app = Flask(__name__)
-recipe_directory = '../cookbook/src/recipes'
+recipe_directory = 'cookbook/cookbook/src/recipes'
 
 dotenv.load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
+GITHUB_ACCESS_TOKEN = os.getenv("GITHUB_ACCESS_TOKEN")
 
 @app.route('/', methods=['GET'])
 def home():
@@ -61,14 +62,10 @@ def scrape():
 
 
     repo = Repo("..")
-
-    remote_url = "https://github.com/toqvist/cookbook.git"
-    repo.create_remote('origin', remote_url)
-
-    
-    origin = repo.remote(name="origin")
-    origin.pull()
-    
+    repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
+    repo.create_remote('origin', repository_url)
+    repo = Repo.clone_from(repository_url, '.')
+    repo.pull()
     # Saving to a markdown file
     with open(f"{recipe_directory}/{filename}", "w") as file:
         file.write(md_content)
@@ -81,7 +78,7 @@ def scrape():
         repo.git.commit("-m", commit_message)
 
         # Push the changes to the remote repository (assuming origin and main branch)
-        origin.push()
+        repo.push()
 
     except Exception as e:
         return str(e), 500  # Return an error message and status code 500 in case of an error
