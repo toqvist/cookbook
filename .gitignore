@@ -3,3 +3,4 @@ _site/
 src/_includes/css/
 node_modules/
 venv
+.env

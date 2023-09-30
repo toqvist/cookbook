@@ -1,9 +1,14 @@
 from flask import Flask, request
 from recipe_scrapers import scrape_me
-import git
+import dotenv
+import os
 
 app = Flask(__name__)
 recipe_directory = '../cookbook/src/recipes'
+
+dotenv.load_dotenv()  # Load environment variables from .env
+
+API_KEY = os.getenv("API_KEY")
 
 @app.route('/', methods=['POST'])
 def home():
@@ -30,6 +35,10 @@ def home():
 @app.route('/scrape', methods=['POST'])
 def scrape():
     request_body = request.get_json()
+
+    if request_body['key'] != API_KEY:
+        return 'Invalid API key', 400
+    
     scraper = scrape_me(request_body['url'], wild_mode=True)
 
     host = scraper.host()
