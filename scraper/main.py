@@ -65,7 +65,13 @@ def scrape():
     repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
     repo.create_remote('origin', repository_url)
     origin = repo.remote(name="origin")
-    origin.pull()
+    
+    try:
+        origin.pull()
+    except Exception as e:
+        # Log the error message
+        print(f"Git pull error: {str(e)}")
+        return str(e), 50
 
     
     # Saving to a markdown file
