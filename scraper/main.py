@@ -62,7 +62,7 @@ def scrape():
 
     repo = Repo("..")
 
-    remote_url = "git@github.com:toqvist/cookbook.git"
+    remote_url = "https://github.com/toqvist/cookbook.git"
     repo.create_remote('origin', remote_url)
 
     
