@@ -61,12 +61,12 @@ def scrape():
     filename = title.lower().replace(" ", "-").split("(")[0].strip("-") + ".md"
 
 
-    repo = Repo("..")
-    """ repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
+    repo = Repo('..')
+    repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/your-username/your-repo.git"
     repo.create_remote('origin', repository_url)
-    repo = Repo.clone_from(repository_url, '.') """
     origin = repo.remote(name="origin")
     origin.pull()
+
     
     # Saving to a markdown file
     with open(f"{recipe_directory}/{filename}", "w") as file:
