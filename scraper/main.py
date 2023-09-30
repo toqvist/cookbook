@@ -2,34 +2,19 @@ from flask import Flask, request
 from recipe_scrapers import scrape_me
 import dotenv
 import os
+from git import Repo
+import subprocess
 
 app = Flask(__name__)
 recipe_directory = '../cookbook/src/recipes'
 
-dotenv.load_dotenv()  # Load environment variables from .env
+dotenv.load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
 def home():
-    request_body = request.get_json()
-    scraper = scrape_me(
-        request_body['url'], wild_mode=True)
-
-    scraper.host()
-    scraper.title()
-    scraper.total_time()
-    scraper.image()
-    scraper.ingredients()
-    scraper.ingredient_groups()
-    scraper.instructions()
-    scraper.instructions_list()
-    scraper.yields()
-    scraper.to_json()
-    scraper.links()
-    scraper.nutrients()  # if available
-
-    return scraper.to_json()
+    return 'Hello', 200
 
 
 @app.route('/scrape', methods=['POST'])
@@ -73,11 +58,28 @@ def scrape():
 
     filename = title.lower().replace(" ", "-").split("(")[0].strip("-") + ".md"
 
+    repo = Repo(recipe_directory)
+    origin = repo.remote(name="origin")
+    origin.pull()
+    
     # Saving to a markdown file
     with open(f"{recipe_directory}/{filename}", "w") as file:
         file.write(md_content)
 
-    return scraper.to_json()
+    try:
+        repo.git.add(".")
+
+        # Commit the changes with a descriptive message
+        commit_message = f"Add recipe: {title}"
+        repo.git.commit("-m", commit_message)
+
+        # Push the changes to the remote repository (assuming origin and main branch)
+        origin.push()
+
+    except Exception as e:
+        return str(e), 500  # Return an error message and status code 500 in case of an error
+    
+    return scraper.to_json(), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
