@@ -59,7 +59,13 @@ def scrape():
 
     filename = title.lower().replace(" ", "-").split("(")[0].strip("-") + ".md"
 
+
     repo = Repo("..")
+
+    remote_url = "git@github.com:toqvist/recipes.git"
+    repo.create_remote('origin', remote_url)
+
+    
     origin = repo.remote(name="origin")
     origin.pull()
     
