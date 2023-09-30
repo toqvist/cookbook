@@ -1,8 +1,8 @@
 ---
 title: Gochujang-Glazed Eggplant With Fried Scallions
 image: https://static01.nyt.com/images/2020/10/25/dining/28banchanrex3/merlin_177434121_7012c520-ef9d-4cc3-aa3a-6ebcbea73651-mediumThreeByTwo440.jpg
-time: 45
-servings: 6 servings
+time: 45 min
+servings: 6
 sourceLabel: cooking.nytimes.com
 sourceURL: https://cooking.nytimes.com/recipes/1021441-gochujang-glazed-eggplant-with-fried-scallions
 ingredients:
@@ -16,6 +16,7 @@ ingredients:
   - 1/2 cup olive oil
   - 4 scallions, trimmed, cut into 3-inch segments, then very thinly sliced lengthwise, white and green parts separated
 ---
+
 1. Place the eggplant in a colander set inside a large bowl or the sink. Sprinkle with the salt, toss to combine and let sit for 30 minutes to remove excess moisture.
 
 2. Meanwhile, in a small bowl, add the gochujang, soy sauce, brown sugar, sesame oil and garlic. Whisk to combine, then set aside.
@@ -33,4 +34,3 @@ ingredients:
 8. Finally, sauce the eggplants: Add the first batch of eggplants back to the pan alongside the second batch. Reduce the heat to medium-low and pour the reserved gochujang sauce over the eggplants. Toss until evenly coated and the gochujang starts to caramelize, about 1 minute.
 
 9. Plate the eggplants on a large platter and garnish with the fried scallions and the reserved raw scallion greens. Serve immediately. (To store for later, transfer to a resealable container and keep in the refrigerator for 3 to 5 days. This dish tastes great cold, straight out of the fridge, or at room temperature.)
-
