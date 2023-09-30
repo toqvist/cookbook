@@ -58,7 +58,7 @@ def scrape():
 
     filename = title.lower().replace(" ", "-").split("(")[0].strip("-") + ".md"
 
-    repo = Repo(recipe_directory)
+    repo = Repo("..")
     origin = repo.remote(name="origin")
     origin.pull()
     
