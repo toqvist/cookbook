@@ -138,7 +138,7 @@ def scrape():
         print(f"Error writing file: {str(e)}")
 
     try:
-        repo.git.add(".")
+        repo.git.add(f"{recipe_directory}/{filename}")
 
         # Commit the changes with a descriptive message
         commit_message = f"Add recipe: {title}"
