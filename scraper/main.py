@@ -65,17 +65,24 @@ def scrape():
     repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
 
     try:
-        repo.create_remote('origin', repository_url)
-        origin = repo.remote(name="origin")
-    except  Exception as e:
-        print(f"Remote creation failed. {str(e)}")
-    
-    try:
-        origin.pull()
+        # Check if the 'origin' remote already exists
+        existing_origin = [remote for remote in repo.remotes if remote.name == 'origin']
+        if not existing_origin:
+            repo.create_remote('origin', repository_url)
+        else:
+            # If 'origin' already exists, update its URL
+            origin = existing_origin[0]
+            origin.config_writer().set("url", repository_url)
+            origin.config_writer().release()
     except Exception as e:
-        # Log the error message
+        print(f"Remote creation/updates failed. {str(e)}")
+
+    # Now, attempt to pull from the 'origin' remote
+    try:
+        repo.remotes.origin.pull()
+    except Exception as e:
         print(f"Git pull error: {str(e)}")
-        return str(e), 50
+        return str(e), 500  # Return an error message and status code 500 in case of a Git pull error
 
     
     # Saving to a markdown file
