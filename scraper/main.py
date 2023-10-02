@@ -23,10 +23,9 @@ def touch():
     with open('touch.txt', 'w') as f:
         f.write('Hello')
     if os.path.exists('touch.txt'):
-        print("File saved")
+        return 'File saved', 200
     else:
-        print("File not saved")
-    return 'File touched', 200
+        return 'File not saved', 200
 
 @app.route('/dirs', methods=['POST'])
 def log_directory_contents():
