@@ -7,7 +7,8 @@ from git import Repo
 import subprocess
 
 app = Flask(__name__)
-recipe_directory = '../cookbook/src/recipes'
+recipe_directory = './cookbook/src/recipes'
+git_directory = '.'
 
 dotenv.load_dotenv()
 
@@ -100,7 +101,7 @@ def scrape():
     filename = title.lower().replace(" ", "-").split("(")[0].strip("-") + ".md"
 
 
-    repo = Repo('..')
+    repo = Repo(git_directory)
     repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
     
 
