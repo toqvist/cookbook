@@ -2,6 +2,7 @@ from flask import Flask, request
 from recipe_scrapers import scrape_me
 import dotenv
 import os
+import logging
 from git import Repo
 import subprocess
 
@@ -16,6 +17,25 @@ GITHUB_ACCESS_TOKEN = os.getenv("GITHUB_ACCESS_TOKEN")
 @app.route('/', methods=['GET'])
 def home():
     return 'Hello', 200
+
+@app.route('/dirs', methods=['GET'])
+def log_directory_contents():
+    directory_path = ".."  # Replace with the desired directory path
+    
+    def print_item(item_name, indent=0):
+        print("  " * indent + item_name)
+
+    def traverse_directory(directory, indent=0):
+        for item_name in os.listdir(directory):
+            item_path = os.path.join(directory, item_name)
+            print_item(item_name, indent)
+            """ if os.path.isdir(item_path):
+                traverse_directory(item_path, indent + 1) """
+
+    print_item(f"[{os.path.basename(directory_path)}]")
+    traverse_directory(directory_path)
+    return 'Hello', 200
+
 
 
 @app.route('/scrape', methods=['POST'])
@@ -97,7 +117,6 @@ def scrape():
     # Saving to a markdown file
     with open(f"{recipe_directory}/{filename}", "w") as file:
         file.write(md_content)
-        """ check if the file exists """
         if os.path.exists(filename):
             print("File saved")
         else:
@@ -117,6 +136,7 @@ def scrape():
         return str(e), 500  # Return an error message and status code 500 in case of an error
     
     return scraper.to_json(), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True)
