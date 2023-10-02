@@ -19,8 +19,7 @@ def home():
     return 'Hello', 200
 
 @app.route('/dirs', methods=['GET'])
-def log_directory_contents():
-    directory_path = ".."  # Replace with the desired directory path
+def log_directory_contents(directory_path):
     
     def print_item(item_name, indent=0):
         print("  " * indent + item_name)
