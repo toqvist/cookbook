@@ -64,8 +64,7 @@ def scrape():
     repo = Repo('..')
     repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
 
-
-    origin = [remote for remote in repo.remotes if remote.name == 'origin']
+    origin = [remote for remote in repo.remotes if remote.name == 'origin'][0]
 
     if not origin:
         try:
