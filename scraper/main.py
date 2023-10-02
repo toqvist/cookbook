@@ -130,7 +130,7 @@ def scrape():
         with open(f"{recipe_directory}/{filename}", "w") as file:
             file.write(md_content)
             print(recipe_directory)
-            if os.path.exists(filename):
+            if os.path.exists(f"{recipe_directory}/{filename}"):
                 print("File saved")
             else:
                 print("File not saved")
