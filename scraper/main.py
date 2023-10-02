@@ -64,6 +64,14 @@ def scrape():
     repo = Repo('..')
     repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
 
+    email = "tobias.ahlqvist@protonmail.com"
+    username = "Tobias' Bot"
+
+    # Set the user email and name
+    repo.config_writer().set_value("user", "email", email)
+    repo.config_writer().set_value("user", "name", username)
+    repo.config_writer().release()
+
     origin = None
     for remote in repo.remotes:
         if remote.name == 'origin':
