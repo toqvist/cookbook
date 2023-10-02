@@ -73,7 +73,7 @@ def scrape():
     os.environ["GIT_COMMITTER_NAME"] = username
     os.environ["GIT_COMMITTER_EMAIL"] = email
     
-    repo.git.checkout('main')
+  
     origin = None
     for remote in repo.remotes:
         if remote.name == 'origin':
@@ -91,6 +91,8 @@ def scrape():
     except Exception as e:
         print(f"Git pull error: {str(e)}")
         return str(f"Git pull error: {str(e)}"), 500  """
+    
+    repo.git.checkout('main')
     
     # Saving to a markdown file
     with open(f"{recipe_directory}/{filename}", "w") as file:
