@@ -8,7 +8,7 @@ import subprocess
 
 app = Flask(__name__)
 recipe_directory = './cookbook/src/recipes'
-git_directory = '.'
+git_directory = './'
 
 dotenv.load_dotenv()
 
@@ -44,7 +44,7 @@ def log_directory_contents():
 @app.route('/touch', methods=['GET'])
 def touch():
     with open('touch.txt', 'w') as f:
-        f.write('Hello')
+        f.write('Touchy')
     if os.path.exists('touch.txt'):
         return 'File saved', 200
     else:
