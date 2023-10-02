@@ -76,7 +76,7 @@ def scrape():
         origin = repo.create_remote('origin', repository_url)
 
     try:
-        print(origin)
+        print(origin.url)
         origin.pull()
     except Exception as e:
         print(f"Git pull error: {str(e)}")
