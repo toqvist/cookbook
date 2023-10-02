@@ -65,10 +65,9 @@ def scrape():
     repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
 
 
-    origin = None
-    existing_origin = [remote for remote in repo.remotes if remote.name == 'origin']
+    origin = [remote for remote in repo.remotes if remote.name == 'origin']
 
-    if not existing_origin:
+    if not origin:
         try:
             # Create the 'origin' remote
             repo.create_remote('origin', repository_url)
@@ -76,7 +75,6 @@ def scrape():
             print(f"Remote creation failed. {str(e)}")
     else:
         # If 'origin' already exists, update its URL
-        origin = existing_origin[0]
         origin.config_writer().set("url", repository_url)
         origin.config_writer().release()
 
