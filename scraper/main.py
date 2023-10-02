@@ -73,7 +73,7 @@ def scrape():
     os.environ["GIT_COMMITTER_NAME"] = username
     os.environ["GIT_COMMITTER_EMAIL"] = email
     
-    repo.git.branch('main')
+    repo.git.checkout('main')
     origin = None
     for remote in repo.remotes:
         if remote.name == 'origin':
