@@ -18,8 +18,11 @@ GITHUB_ACCESS_TOKEN = os.getenv("GITHUB_ACCESS_TOKEN")
 def home():
     return 'Hello', 200
 
-@app.route('/dirs', methods=['GET'])
-def log_directory_contents(directory_path):
+@app.route('/dirs', methods=['POST'])
+def log_directory_contents():
+    
+    request_body = request.get_json()
+    directory_path = request_body['path']
     
     def print_item(item_name, indent=0):
         print("  " * indent + item_name)
