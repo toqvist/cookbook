@@ -70,8 +70,10 @@ def scrape():
             origin = remote
             break
 
-    if not origin:
-      origin = repo.create_remote('origin', repository_url)
+    if origin:
+        origin.set_url(repository_url)
+    else:
+        origin = repo.create_remote('origin', repository_url)
 
     try:
         print(origin)
