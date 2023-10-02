@@ -67,10 +67,10 @@ def scrape():
     email = "tobias.ahlqvist@protonmail.com"
     username = "Tobias' Bot"
 
-    # Set the user email and name
-    repo.config_writer().set_value("user", "email", email)
-    repo.config_writer().set_value("user", "name", username)
-    repo.config_writer().release()
+    os.environ["GIT_AUTHOR_NAME"] = username
+    os.environ["GIT_AUTHOR_EMAIL"] = email
+    os.environ["GIT_COMMITTER_NAME"] = username
+    os.environ["GIT_COMMITTER_EMAIL"] = email
 
     origin = None
     for remote in repo.remotes:
