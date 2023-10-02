@@ -97,6 +97,11 @@ def scrape():
     # Saving to a markdown file
     with open(f"{recipe_directory}/{filename}", "w") as file:
         file.write(md_content)
+        """ check if the file exists """
+        if os.path.exists(filename):
+            print("File saved")
+        else:
+            print("File not saved")
 
     try:
         repo.git.add(".")
