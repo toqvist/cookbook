@@ -63,8 +63,14 @@ def scrape():
 
     repo = Repo('..')
     repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
-    repo.create_remote('origin', repository_url)
-    origin = repo.remote(name="origin")
+
+    print(repository_url)
+
+    try:
+        repo.create_remote('origin', repository_url)
+        origin = repo.remote(name="origin")
+    except:
+        print(f"Remote creation failed. {str(e)}")
     
     try:
         origin.pull()
