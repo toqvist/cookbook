@@ -18,14 +18,7 @@ GITHUB_ACCESS_TOKEN = os.getenv("GITHUB_ACCESS_TOKEN")
 def home():
     return 'Hello', 200
 
-@app.route('/touch', methods=['GET'])
-def touch():
-    with open('touch.txt', 'w') as f:
-        f.write('Hello')
-    if os.path.exists('touch.txt'):
-        return 'File saved', 200
-    else:
-        return 'File not saved', 200
+
 
 @app.route('/dirs', methods=['POST'])
 def log_directory_contents():
@@ -47,7 +40,14 @@ def log_directory_contents():
     traverse_directory(directory_path)
     return 'Hello', 200
 
-
+@app.route('/touch', methods=['GET'])
+def touch():
+    with open('touch.txt', 'w') as f:
+        f.write('Hello')
+    if os.path.exists('touch.txt'):
+        return 'File saved', 200
+    else:
+        return 'File not saved', 200
 
 @app.route('/scrape', methods=['POST'])
 def scrape():
@@ -129,6 +129,7 @@ def scrape():
     try:
         with open(f"{recipe_directory}/{filename}", "w") as file:
             file.write(md_content)
+            print(recipe_directory)
             if os.path.exists(filename):
                 print("File saved")
             else:
