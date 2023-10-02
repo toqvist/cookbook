@@ -48,6 +48,14 @@ def touch():
         return 'File saved', 200
     else:
         return 'File not saved', 200
+    
+@app.route('/cat', methods=['POST'])
+def cat():
+    request_body = request.get_json()
+    file_path = request_body['path']
+    with open(file_path, 'r') as f:
+        return f.read(), 200
+        
 
 @app.route('/scrape', methods=['POST'])
 def scrape():
