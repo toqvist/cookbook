@@ -19,7 +19,7 @@ def home():
     return 'Hello', 200
 
 @app.route('/touch', methods=['GET'])
-def home():
+def touch():
     with open('touch.txt', 'w') as f:
         f.write('Hello')
     if os.path.exists('touch.txt'):
