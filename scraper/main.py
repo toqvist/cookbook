@@ -63,6 +63,7 @@ def scrape():
 
     repo = Repo('..')
     repository_url = f"https://{GITHUB_ACCESS_TOKEN}@github.com/toqvist/cookbook.git"
+    
 
     email = "tobias.ahlqvist@protonmail.com"
     username = "Tobias' Bot"
@@ -71,7 +72,8 @@ def scrape():
     os.environ["GIT_AUTHOR_EMAIL"] = email
     os.environ["GIT_COMMITTER_NAME"] = username
     os.environ["GIT_COMMITTER_EMAIL"] = email
-
+    
+    repo.git.branch('main')
     origin = None
     for remote in repo.remotes:
         if remote.name == 'origin':
