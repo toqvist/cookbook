@@ -7,8 +7,8 @@ from git import Repo
 import subprocess
 
 app = Flask(__name__)
-recipe_directory = './cookbook/src/recipes'
-git_directory = './'
+recipe_directory = '../cookbook/src/recipes'
+git_directory = '..'
 
 dotenv.load_dotenv()
 
