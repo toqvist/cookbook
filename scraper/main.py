@@ -18,6 +18,16 @@ GITHUB_ACCESS_TOKEN = os.getenv("GITHUB_ACCESS_TOKEN")
 def home():
     return 'Hello', 200
 
+@app.route('/touch', methods=['GET'])
+def home():
+    with open('touch.txt', 'w') as f:
+        f.write('Hello')
+    if os.path.exists('touch.txt'):
+        print("File saved")
+    else:
+        print("File not saved")
+    return 'File touched', 200
+
 @app.route('/dirs', methods=['POST'])
 def log_directory_contents():
     
@@ -117,12 +127,15 @@ def scrape():
     repo.git.checkout('main')
     
     # Saving to a markdown file
-    with open(f"{recipe_directory}/{filename}", "w") as file:
-        file.write(md_content)
-        if os.path.exists(filename):
-            print("File saved")
-        else:
-            print("File not saved")
+    try:
+        with open(f"{recipe_directory}/{filename}", "w") as file:
+            file.write(md_content)
+            if os.path.exists(filename):
+                print("File saved")
+            else:
+                print("File not saved")
+    except Exception as e:
+        print(f"Error writing file: {str(e)}")
 
     try:
         repo.git.add(".")
