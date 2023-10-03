@@ -41,7 +41,7 @@ def log_directory_contents():
     traverse_directory(directory_path)
     return 'Hello', 200
 
-@app.route('/touch', methods=['GET'])
+""" @app.route('/touch', methods=['GET'])
 def touch():
     with open('touch.txt', 'w') as f:
         f.write('Touchy')
@@ -57,7 +57,7 @@ def cat():
     with open(file_path, 'r') as f:
         return f.read(), 200
         
-
+ """
 @app.route('/scrape', methods=['POST'])
 def scrape():
     request_body = request.get_json()
@@ -126,7 +126,6 @@ def scrape():
         origin = repo.create_remote('origin', repository_url)
 
     try:
-        print(origin.url)
         origin.pull()
     except Exception as e:
         print(f"Git pull error: {str(e)}")
