@@ -125,12 +125,12 @@ def scrape():
     else:
         origin = repo.create_remote('origin', repository_url)
 
-    """ try:
+    try:
         print(origin.url)
         origin.pull()
     except Exception as e:
         print(f"Git pull error: {str(e)}")
-        return str(f"Git pull error: {str(e)}"), 500  """
+        return str(f"Git pull error: {str(e)}"), 500 
     
     repo.git.checkout('main')
     
@@ -149,15 +149,13 @@ def scrape():
     try:
         repo.git.add(f"{recipe_directory}/{filename}")
 
-        # Commit the changes with a descriptive message
         commit_message = f"Add recipe: {title}"
         repo.git.commit("-m", commit_message)
 
-        # Push the changes to the remote repository (assuming origin and main branch)
         origin.push(force=True)
 
     except Exception as e:
-        return str(e), 500  # Return an error message and status code 500 in case of an error
+        return str(e), 500
     
     return scraper.to_json(), 200
 
