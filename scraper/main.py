@@ -8,6 +8,7 @@ import subprocess
 
 app = Flask(__name__)
 recipe_directory = '../cookbook/src/recipes'
+recipe_path = 'cookbook/src/recipes'
 git_directory = '..'
 
 dotenv.load_dotenv()
@@ -146,7 +147,7 @@ def scrape():
         print(f"Error writing file: {str(e)}")
 
     try:
-        repo.git.add(f"{recipe_directory}/{filename}")
+        repo.git.add(f"{recipe_path}/{filename}")
 
         commit_message = f"Add recipe: {title}"
         repo.git.commit("-m", commit_message)
