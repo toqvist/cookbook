@@ -8,5 +8,6 @@
     "searchContainsLabel": "Contains",
     "servingsLabel": "servings",
     "ingredientsLabel": "Ingredients",
+    "notesLabel": "Notes",
     "baseURL": "https://myonlinecookbook.netlify.app"
 }

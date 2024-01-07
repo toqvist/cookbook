@@ -44,6 +44,19 @@
                             </template>
                         </ul>
                     </template>
+                    
+                    {% if notes %}
+                    <div>
+                        <h3 x-if="notes">{{ site.notesLabel }}</h3>
+                        <template x-if="notes">
+                            <ul class="c-recipe__ingredients-list">
+                                <template x-for="(note, index) in notes" :key="index">
+                                    <li x-text="note"></li>
+                                </template>
+                            </ul>
+                        </template>
+                    </div>
+                    {% endif %}
 
                     <template x-if="!currentServings">
                         <ul class="c-recipe__ingredients-list">

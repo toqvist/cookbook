@@ -9,11 +9,9 @@ servings: 12
 sourceLabel: seriouseats.com
 sourceURL: https://www.seriouseats.com/egyptian-bissara-recipe-7109529
 ingredients:
-  - For the Shallot-Infused Oil and Fried Shallots:
   - 1 cup (237ml) neutral frying oil, such as canola
   - 10 medium shallots (14 ounces; 397g), thinly sliced
   - Kosher salt
-  - For the Bissara:
   - 2 cups dried split fava beans (12.7 ounces; 360g), rinsed
   - 2 cups packed fresh cilantro leaves and tender stems (2 ounces; 57g), divided
   - 1 cup packed flat-leaf parsley leaves (1 ounce; 30g)
@@ -30,7 +28,6 @@ ingredients:
   - 1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume
   - 4 cups (946ml) vegetable broth
   - 2 tablespoons (30ml) shallot-infused oil (recipe above)
-  - To Serve:
   - 1 tablespoon (15ml) shallot-infused oil
   - 1/4 teaspoon paprika
   - Fried shallots (recipe above)
