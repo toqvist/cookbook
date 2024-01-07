@@ -4,6 +4,7 @@ image: /recipes/img/tahini-sauce.jpeg
 sourceURL: https://youtu.be/JCbDYulk28U?si=tc81suFsLnKiIFhl&t=90
 tags:
   - Tahini
+  - Sauce
 ingredients:
   - 1/2 cup tahini
   - 4 tbsp freshly squeezed lemon juice
