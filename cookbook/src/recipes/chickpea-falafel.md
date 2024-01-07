@@ -2,7 +2,7 @@
 title: Chickpea Falafel
 image: /recipes/img/chickpea-falafel.jpeg
 tags:
-  - Chickpeas 🌿
+  - Chickpeas
 sourceLabel: Zeinas Kitchen (with modifications)
 sourceURL: https://zeinaskitchen.se/falafel/
 ingredients:

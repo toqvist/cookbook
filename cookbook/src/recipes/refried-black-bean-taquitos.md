@@ -2,9 +2,8 @@
 title: Refried Black Bean Taquitos
 image: /recipes/img/refried-bean-taquitos.jpg
 tags:
-  - Beans 🌱
-  - Taquitos 🌮
-  - Spicy 🌶️
+  - Tortilla
+  - Black Bean
 ingredients:
   - 4 tortilla breads
   - 1 sweet potato

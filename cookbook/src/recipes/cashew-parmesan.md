@@ -2,8 +2,7 @@
 title: Cashew Parmesan
 image: /recipes/img/cashew-parmesan.webp
 tags:
-  - Cheese 🧀
-  - Condiment 🍶
+  - Cheese
 sourceLabel: She Likes Food
 sourceURL: https://www.shelikesfood.com/easy-vegan-black-bean-burgers-giveaway/
 ingredients:

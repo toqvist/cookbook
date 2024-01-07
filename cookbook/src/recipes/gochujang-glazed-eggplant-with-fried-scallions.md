@@ -2,6 +2,8 @@
 title: Gochujang-Glazed Eggplant With Fried Scallions
 image: https://static01.nyt.com/images/2020/10/25/dining/28banchanrex3/merlin_177434121_7012c520-ef9d-4cc3-aa3a-6ebcbea73651-mediumThreeByTwo440.jpg
 tags:
+  - Gochujang
+  - Rice
 time: 45 min
 servings: 6
 sourceLabel: cooking.nytimes.com

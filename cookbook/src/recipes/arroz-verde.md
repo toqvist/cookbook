@@ -2,7 +2,8 @@
 title: Arroz Verde (Green Rice)
 image: /recipes/img/arroz-verde.jpg
 tags:
-  - Rice 🍚
+  - Rice
+  - New
 time: 40 min + 10 min resting
 servings: [Dependent on serving size; wasn't provided in original format]
 sourceLabel: Fine Cooking
@@ -18,6 +19,7 @@ ingredients:
   - 1-1/2 cups long-grain rice
   - 1/4 cup finely minced onion
   - 1 clove garlic, minced
+
 ---
 
 1. Purée cilantro, spinach, and broth in a blender.

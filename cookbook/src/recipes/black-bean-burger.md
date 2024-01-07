@@ -2,7 +2,7 @@
 title: Black Bean Burger
 image: /recipes/img/black-bean-burger.jpg
 tags:
-  - Burger 🍔
+  - Black Bean
 sourceLabel: She Likes Food
 sourceURL: https://www.shelikesfood.com/easy-vegan-black-bean-burgers-giveaway/
 ingredients:
