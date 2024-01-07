@@ -44,7 +44,15 @@
                             </template>
                         </ul>
                     </template>
-                    
+
+                    <template x-if="!currentServings">
+                        <ul class="c-recipe__ingredients-list">
+                            {% for ingredient in ingredients %}
+                                <li>{{ ingredient }}</li>
+                            {% endfor %}
+                        </ul>
+                    </template>
+
                     {% if notes %}
                     <div>
                         <h3 x-if="notes">{{ site.notesLabel }}</h3>
@@ -57,14 +65,6 @@
                         </template>
                     </div>
                     {% endif %}
-
-                    <template x-if="!currentServings">
-                        <ul class="c-recipe__ingredients-list">
-                            {% for ingredient in ingredients %}
-                                <li>{{ ingredient }}</li>
-                            {% endfor %}
-                        </ul>
-                    </template>
                 </div>
 
                 <div class="c-recipe__instructions-wrapper u-free-text">
