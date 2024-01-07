@@ -7,7 +7,6 @@ servings: 8 servings
 sourceLabel: allrecipes.com
 sourceURL: https://www.allrecipes.com/chef-johns-jollof-rice-recipe-7499757
 ingredients:
-  - For the sauce:
   - 1 large, ripe tomato, cored, quartered
   - 1 large red bell pepper, seeded, roughly chopped
   - 1 whole habanero pepper, stem removed
@@ -15,7 +14,6 @@ ingredients:
   - 4 cloves garlic, peeled
   - 1 tablespoon minced ginger
   - 2 cups water
-  - For the rice:
   - 1/3 cup olive oil
   - 1 red onion, diced
   - 1 teaspoon salt, plus more to taste
@@ -28,7 +26,8 @@ ingredients:
   - 1 teaspoon dried thyme
   - 2 1/4 cups basmati rice
   - 1 bay leaf
-  - 1 tablespoon chicken bouillon paste
+  - 1 tablespoon bouillon paste
+  - Optional
   - 1/4 cup chopped green onion, for garnish, optional
   - 1/4 cup chopped cilantro, for garnish, optional
 ---
