@@ -13,6 +13,7 @@ git_directory = '..'
 
 dotenv.load_dotenv()
 
+SERVICE_MODE = os.getenv("SERVICE_MODE")
 API_KEY = os.getenv("API_KEY")
 GITHUB_ACCESS_TOKEN = os.getenv("GITHUB_ACCESS_TOKEN")
 
@@ -63,9 +64,11 @@ def cat():
 def scrape():
     request_body = request.get_json()
 
-    if request_body['key'] != API_KEY:
-        return 'Invalid API key', 400
-    
+
+    if SERVICE_MODE != 'development':
+        if request_body['key'] != API_KEY:
+            return f'Invalid API key: {request_body["key"]}', 400
+        
     scraper = scrape_me(request_body['url'], wild_mode=True)
 
     host = scraper.host()
@@ -146,17 +149,18 @@ def scrape():
     except Exception as e:
         print(f"Error writing file: {str(e)}")
 
-    try:
-        repo.git.add(f"{recipe_path}/{filename}")
+    if request_body['push_to_repo'] == 'true':
+        try:
+            repo.git.add(f"{recipe_path}/{filename}")
 
-        commit_message = f"Add recipe: {title}"
-        repo.git.commit("-m", commit_message)
+            commit_message = f"Add recipe: {title}"
+            repo.git.commit("-m", commit_message)
 
-        origin.push(force=True)
+            origin.push(force=True)
 
-    except Exception as e:
-        return str(e), 500
-    
+        except Exception as e:
+            return str(e), 500
+        
     return scraper.to_json(), 200
 
 
