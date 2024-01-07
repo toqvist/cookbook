@@ -18,7 +18,7 @@ ingredients:
   - 3 tablespoons cilantro
   - 3 tablespoons vegan butter
   - 3 cloves garlic
-  - Kosher 
+  - Kosher salt
 notes: 
   - The dough stores well in the fridge
   - Nigella seeds can be added optionally
