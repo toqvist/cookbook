@@ -117,24 +117,24 @@ def scrape():
         os.environ["GIT_COMMITTER_NAME"] = username
         os.environ["GIT_COMMITTER_EMAIL"] = email
     
-        origin = None
-        for remote in repo.remotes:
-            if remote.name == 'origin':
-                origin = remote
-                break
+    origin = None
+    for remote in repo.remotes:
+        if remote.name == 'origin':
+            origin = remote
+            break
 
-        if origin:
-            origin.set_url(repository_url)
-        else:
-            origin = repo.create_remote('origin', repository_url)
+    if origin:
+        origin.set_url(repository_url)
+    else:
+        origin = repo.create_remote('origin', repository_url)
 
-        try:
-            origin.pull()
-        except Exception as e:
-            print(f"Git pull error: {str(e)}")
-            return str(f"Git pull error: {str(e)}"), 500 
-        
-        repo.git.checkout('main')
+    try:
+        origin.pull()
+    except Exception as e:
+        print(f"Git pull error: {str(e)}")
+        return str(f"Git pull error: {str(e)}"), 500 
+    
+    repo.git.checkout('main')
     
     # Saving to a markdown file
     try:
