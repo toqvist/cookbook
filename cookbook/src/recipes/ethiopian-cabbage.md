@@ -4,7 +4,7 @@ image: https://urbanfarmie.com/wp-content/uploads/Ethiopian-Cabbage-Featured-Ima
 tags:
  - Cabbage
 time: 30 min
-servings: 6 servings
+servings: 6
 sourceLabel: urbanfarmie.com
 sourceURL: https://urbanfarmie.com/ethiopian-cabbage/
 ingredients:

@@ -5,7 +5,7 @@ tags:
   - New
   - Fava Bean
 time: 940 min
-servings: 12 servings
+servings: 12
 sourceLabel: seriouseats.com
 sourceURL: https://www.seriouseats.com/egyptian-bissara-recipe-7109529
 ingredients:

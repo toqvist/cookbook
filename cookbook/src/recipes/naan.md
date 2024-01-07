@@ -4,7 +4,7 @@ image: https://rainbowplantlife.com/wp-content/uploads/2021/09/updated-naan-phot
 tags:
   - Bread
 time: 45 min
-servings: 8 servings
+servings: 8
 sourceLabel: rainbowplantlife.com
 sourceURL: https://rainbowplantlife.com/vegan-naan/
 ingredients:
@@ -22,7 +22,6 @@ ingredients:
 notes: 
   - The dough stores well in the fridge
   - Nigella seeds can be added optionally
-
 ---
 
 1. Mix 2 tsp sugar, 160ml lukewarm water and 1,5 tsp dry yeast, 

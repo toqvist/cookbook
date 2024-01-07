@@ -2,13 +2,14 @@
 title: Jollof Rice
 image: https://cdn.jwplayer.com/v2/media/BRU94itM/poster.jpg?width=720
 tags:
+  - Rice
 time: 57 min
-servings: 8 servings
+servings: 8
 sourceLabel: allrecipes.com
 sourceURL: https://www.allrecipes.com/chef-johns-jollof-rice-recipe-7499757
 ingredients:
   - 1 large, ripe tomato, cored, quartered
-  - 1 large red bell pepper, seeded, roughly chopped
+  - 1 large red bell pepper, seeded,roughly chopped
   - 1 whole habanero pepper, stem removed
   - 1 whole Fresno chili, or jalapeño, stem removed
   - 4 cloves garlic, peeled
