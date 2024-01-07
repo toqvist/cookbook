@@ -1,5 +1,5 @@
 ---
-title: Vegan Naan
+title: Naan
 image: https://rainbowplantlife.com/wp-content/uploads/2021/09/updated-naan-photo-for-cover-image-1-of-1-1.jpg
 tags:
   - Bread
