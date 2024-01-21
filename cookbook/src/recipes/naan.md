@@ -24,9 +24,9 @@ ingredients:
   - Kosher salt
 ---
 1. Mix 2 tsp sugar, 160ml lukewarm water and 1,5 tsp dry yeast, 
-2. Leave mixutre  for 15 minutes
+2. Leave mixture for 15 minutes. It should be frothing or else the yeast is dead.
 3. Mix 2 cups all-purpose flour, 0,5 tsp salt 0,25 tsp baking powder
-4. Add yeast mixture and 1 tbsp neutral oil and mix with fork until lumpy.
+4. Add yeast mixture and 1 tbsp neutral oil and mix with fork until shaggy.
 5. Oil hands, knead dough
 6. Add oil to bowl, coat the kneaded dough in oil.
 7. Cover with towel and let rise for 90 minutes.
