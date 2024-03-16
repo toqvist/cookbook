@@ -5,7 +5,7 @@ tags:
   - Chickpeas
   - New
 time: 40 min
-servings: 4 servings
+servings: 4
 sourceLabel: spainonafork.com
 sourceURL: https://spainonafork.com/chickpea-meatballs-in-tomato-sauce-recipe/
 ingredients:
