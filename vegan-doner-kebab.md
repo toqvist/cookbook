@@ -1,7 +1,7 @@
 ---
 title: Vegan Döner Kebab
 image: /recipes/img/vegan-doner.png
-ingredients: 
+ingredients:
   - 200g red lentils (7 oz)
   - 1 cup white cabbage
   - 1 carrot
