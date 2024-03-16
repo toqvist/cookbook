@@ -78,7 +78,11 @@ def scrape():
     image = scraper.image()
     ingredients = scraper.ingredients()
     instructions_list = scraper.instructions_list()
+
     yields = scraper.yields()
+    if yields.endswith("servings"):
+        yields = yields.replace("servings", "").strip()
+    
     sourceURL = request_body['url']
     sourceLabel = host
 
